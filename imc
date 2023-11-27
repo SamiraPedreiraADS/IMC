@@ -1,0 +1,35 @@
+#include <iostream>
+
+int main() {
+    int n;
+    double temperatura, soma = 0;
+    int contador = 0;
+
+    std::cout << "Digite o valor de N: ";
+    std::cin >> n;
+
+    while (contador < n) {
+        std::cout << "Digite a temperatura: ";
+        std::cin >> temperatura;
+
+        soma += temperatura;
+        contador++;
+
+        char continuar;
+        std::cout << "Deseja digitar mais uma temperatura? (s/n): ";
+        std::cin >> continuar;
+
+        if (continuar != 's' && continuar != 'S') {
+            break;
+        }
+    }
+
+    if (contador > 0) {
+        double media = soma / contador;
+        std::cout << "A média das temperaturas é: " << media << std::endl;
+    } else {
+        std::cout << "Nenhuma temperatura foi digitada." << std::endl;
+    }
+
+    return 0;
+}
